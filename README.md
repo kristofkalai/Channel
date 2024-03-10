@@ -43,8 +43,6 @@ final class Producer {
 struct ContentView: View {
     private let channel = ClosureChannel<Int>()
     private let producer: Producer
-    @State private var cancellables = Set<AnyCancellable>()
-    @State private var disposeBag = DisposeBag()
 
     init() {
         self.producer = .init(channel: channel)
